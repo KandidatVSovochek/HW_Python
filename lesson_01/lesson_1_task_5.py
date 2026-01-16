@@ -1,5 +1,7 @@
 def num(x):
     print(x, end='')
+
+
 num(8)
 num(8)
 num(0)
