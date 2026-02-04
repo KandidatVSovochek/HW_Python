@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+card.py
+lesson3_pr.py
+user1.py
+.gitignore
+.gitignore
