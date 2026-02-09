@@ -210,3 +210,7 @@ lesson3_pr.py
 user1.py
 .gitignore
 .gitignore
+calculator_test.py
+calculator.py
+string_processor.py
+test_string_processor.py
