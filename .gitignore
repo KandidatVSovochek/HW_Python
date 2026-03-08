@@ -223,3 +223,5 @@ pages/MainPage.py
 labirint_page_object_test.py
 pytest.ini
 pytest.ini
+test_dict.py
+lesson_08/test_post_autorisation.py
