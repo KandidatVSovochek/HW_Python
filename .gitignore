@@ -217,3 +217,11 @@ test_string_processor.py
 ya.png
 5hw.py
 labirint.py
+test_labirint.py
+pages/ResultPages.py
+pages/MainPage.py
+labirint_page_object_test.py
+pytest.ini
+pytest.ini
+test_dict.py
+lesson_08/test_post_autorisation.py
