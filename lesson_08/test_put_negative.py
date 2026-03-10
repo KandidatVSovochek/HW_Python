@@ -27,10 +27,10 @@ def test_change_project(create_project):
         "title": "тест"
     }
     id = create_project
-    headers = {"Authorization": "  ",
+    headers = {"Authorization": "",
                "Content-Type": "application/json"}
     resp = requests.put(f"https://ru.yougile.com/api-v2/projects/{id}",
                         json=change_status, headers=headers)
     body = resp.json()
-    assert resp.status_code == 200
+    assert resp.status_code == 401
     print(body)

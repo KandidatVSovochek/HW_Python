@@ -28,5 +28,5 @@ def test_get_project(create_project):
     resp = requests.get(f"https://ru.yougile.com/api-v2/projects/{id}",
                         headers=headers)
     body = resp.json()
-    assert resp.status_code == 200
+    assert resp.status_code == 401
     print(body)
