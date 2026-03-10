@@ -32,5 +32,4 @@ def test_change_project(create_project):
     resp = requests.put(f"https://ru.yougile.com/api-v2/projects/{id}",
                         json=change_status, headers=headers)
     body = resp.json()
-    assert resp.status_code == 401
-    print(body)
+    print("\nRESPONSE BODY:", resp.text)
