@@ -1,14 +1,13 @@
-import requests
 import pytest
+import requests
 import os
 from dotenv import load_dotenv
-
 
 load_dotenv()
 
 
-# создать проект
-@pytest.fixture(scope="module")
+# создание проекта
+@pytest.fixture(scope="session")
 def create_project():
     project = {"title": "тест"}
     key = os.getenv("YOUGILE_API_KEY")
@@ -20,14 +19,15 @@ def create_project():
     return body["id"]
 
 
-# получить проект по ID
-def test_get_project(create_project):
+@pytest.fixture(scope="session")
+def base_url():
+    return "https://ru.yougile.com/api-v2"
+
+
+@pytest.fixture(scope="session")
+def api_headers():
     key = os.getenv("YOUGILE_API_KEY")
-    id = create_project
-    headers = {"Authorization": f"Bearer {key}",
-               "Content-Type": "application/json"}
-    resp = requests.get(f"https://ru.yougile.com/api-v2/projects/{id}",
-                        headers=headers)
-    body = resp.json()
-    assert resp.status_code == 200
-    print(body)
+    return {
+        "Authorization": f"Bearer {key}",
+        "Content-Type": "application/json"
+        }
