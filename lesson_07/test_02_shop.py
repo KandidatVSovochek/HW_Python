@@ -3,6 +3,7 @@ from pages.Mainpage_shop import MainPage
 from pages.Basket_shop import Basket
 from pages.Order_shop import Order
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 
 def test_order_shop():
@@ -17,5 +18,8 @@ def test_order_shop():
     basket.checkout_button()
     order = Order(driver)
     order.making_an_order()
-    order.check_count()
+    total = driver.find_element(By.CSS_SELECTOR,
+                                ".summary_total_label").text
+    assert "Total: $58.29" in total
+    print(total)
     order.close()

@@ -12,11 +12,5 @@ class Order:
         self.driver.find_element(By.ID, "postal-code").send_keys("123456")
         self.driver.find_element(By.ID, "continue").click()
 
-    def check_count(self):
-        total = self.driver.find_element(By.CSS_SELECTOR,
-                                         ".summary_total_label").text
-        assert "Total: $58.29" in total
-        print(total)
-
     def close(self):
         self.driver.quit()

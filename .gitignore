@@ -227,3 +227,4 @@ test_delete.py
 test_dict.py
 .vscode/launch.json
 .vscode/settings.json
+lesson_08/test_post_autorisation.py

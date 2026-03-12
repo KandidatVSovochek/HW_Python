@@ -25,9 +25,6 @@ class Calc:
         WebDriverWait(self.driver, 45).until(
             EC.text_to_be_present_in_element(
                 (By.CSS_SELECTOR, ".screen"), "15"))
-        actual_answer = self.driver.find_element(By.CSS_SELECTOR,
-                                                 ".screen").text
-        assert actual_answer == "15"
 
     def close(self):
         self.driver.quit()
