@@ -223,5 +223,8 @@ pages/MainPage.py
 labirint_page_object_test.py
 pytest.ini
 pytest.ini
+test_delete.py
 test_dict.py
+.vscode/launch.json
+.vscode/settings.json
 lesson_08/test_post_autorisation.py
