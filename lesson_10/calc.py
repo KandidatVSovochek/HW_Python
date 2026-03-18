@@ -12,16 +12,29 @@ class Calc:
         self.driver.implicitly_wait(10)
 
     def delay(self):
+        """
+            Указание интеревала ожидания ответа.
+            :return: None
+        """
         self.driver.find_element(By.CSS_SELECTOR, "#delay").clear()
         self.driver.find_element(By.CSS_SELECTOR, "#delay").send_keys(45)
 
     def count(self):
+        """
+            Написание выражения для вычисления нажатием на кнопки.
+            :return: None
+        """
         self.driver.find_element(By.XPATH, "//span[text()='7']").click()
         self.driver.find_element(By.XPATH, "//span[text()='+']").click()
         self.driver.find_element(By.XPATH, "//span[text()='8']").click()
         self.driver.find_element(By.XPATH, "//span[text()='=']").click()
 
     def result(self):
+        """
+            Эта функция проверяет равно ли значение вычисления указанное
+            в найденном поле на сайте значинию в условии.
+            :return: None
+        """
         WebDriverWait(self.driver, 45).until(
             EC.text_to_be_present_in_element(
                 (By.CSS_SELECTOR, ".screen"), "15"))

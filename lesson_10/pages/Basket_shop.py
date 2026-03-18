@@ -9,4 +9,8 @@ class Basket:
 
     @allure.step("Переход к оформлению заказа")
     def checkout_button(self):
+        """
+            Функция нажимает на указанную кнопку.
+            :return: None
+        """
         self.driver.find_element(By.ID, "checkout").click()
